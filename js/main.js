@@ -17,12 +17,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-// theme toggle: supports light, dark and high-contrast modes
 function initThemeToggle() {
   const btn = document.querySelector('.theme-toggle');
   if (!btn) return;
   const root = document.documentElement;
-  // load saved theme
+  
   const saved = localStorage.getItem('greenlife:theme');
   if (saved) root.setAttribute('data-theme', saved);
   btn.addEventListener('click', () => {

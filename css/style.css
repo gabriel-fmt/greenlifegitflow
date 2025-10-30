@@ -1,0 +1,63 @@
+:root{--max-w:1100px;--accent:#2b8a3e}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.4;margin:0;color:#222}
+.container{max-width:var(--max-w);margin:0 auto;padding:1rem}
+.site-header{background:#fff;border-bottom:1px solid #eee}
+.site-header .container{display:flex;align-items:center;justify-content:space-between}
+.main-nav a{margin-left:1rem;text-decoration:none;color:var(--accent)}
+.hero{padding:2rem 0}
+.cards{display:flex;gap:1rem;flex-wrap:wrap}
+.card{flex:1 1 220px;border:1px solid #eee;padding:0.5rem;border-radius:8px}
+.card img{max-width:100%;height:140px;object-fit:cover;border-radius:6px}
+.project-list{padding-left:1rem}
+form label{display:block;margin:0.5rem 0}
+input,textarea,button{width:100%;padding:0.5rem;border:1px solid #ddd;border-radius:6px}
+.form-actions{margin-top:0.75rem}
+.feedback{margin-top:0.5rem;padding:0.5rem;border-radius:6px}
+.feedback.error{background:#ffecec;color:#b00020}
+.feedback.success{background:#e8fff0;color:#0b6b2b}
+.site-footer{padding:1rem 0;text-align:center;border-top:1px solid #eee;margin-top:2rem}
+@media(min-width:800px){.main-nav a{margin-left:1.25rem}}
+
+
+/* Accessibility: skip link */
+.skip-link{
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus{
+  left: 10px; top: 10px; width: auto; height: auto; background:#fff; padding:8px 12px; z-index:9999; border-radius:6px;
+}
+
+/* Focus outlines for keyboard nav */
+:focus{ outline: 3px solid #ffd54f; outline-offset: 2px; }
+/* Theme variables and dark mode */
+:root{
+  --bg:#ffffff; --text:#222; --primary:#2e7d32; --accent:#43a047; --danger:#c62828;
+}
+[data-theme="dark"]{
+  --bg:#121212; --text:#eaeaea; --primary:#66bb6a; --accent:#a5d6a7; --danger:#ef9a9a;
+}
+/* High contrast mode */
+[data-theme="high-contrast"]{
+  --bg:#000000; --text:#ffffff; --primary:#ffff00; --accent:#00ffff; --danger:#ff00ff;
+  filter: none;
+}
+
+/* apply variables */
+body{ background:var(--bg); color:var(--text); }
+/* theme toggle */
+.theme-toggle{ background:transparent; border:1px solid rgba(0,0,0,0.06); padding:6px; border-radius:6px; cursor:pointer; }
+
+/* ensure buttons show pointer and text readable */
+button, input[type="submit"]{ cursor:pointer; color: #fff; }
+
+/* ensure contrast for links/buttons */
+a, .btn{ color: var(--primary); }
+
+/* modal focus trap visible */
+.modal:focus{ outline: 3px solid var(--accent); }
